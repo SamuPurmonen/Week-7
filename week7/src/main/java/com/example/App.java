@@ -9,8 +9,8 @@ public class App
     {
 
         Scanner sc = new Scanner(System.in);
-        Library Library = new Library();
-        
+        Library library = new Library();
+        FictionBook fb = new FictionBook();
         
         boolean exit = false;
         while (!exit) {
@@ -42,30 +42,34 @@ public class App
                     
                     if (Input == 1){
                         FictionBook fbook = new FictionBook(title, author, pages, copies);
-                        Library.addBooks(fbook);
+                        library.addBooks(fbook);
 
                     }else if (Input == 2){
                         NonFictionBook nfbook = new NonFictionBook(title, author, pages, copies);
-                        Library.addBooks(nfbook);
+                        library.addBooks(nfbook);
 
                     }else System.out.println("Väärä syöte.");
                     break;
                 
                 case 2:
-                    Library.listBooks();
+                    library.listBooks();
                     break;
 
                 case 3:
                     System.out.println("Anna lainattavan kirjan nimi:");
                     String bookName = sc.nextLine();
-                    //joku borrow etsii bookName2 olion ja muokkaa sen copies määrää -1
-                    Library.loanBook(bookName);
-
+                    
+                    
+                    
+                    fb.borrow(bookName, library);
                     break;
                     
 
                 case 4:
-                    
+                    System.out.println("Anna palautettavan kirjan nimi:");
+                    String bookName2 = sc.nextLine();
+                    fb.returnBook(bookName2, library);
+
                     break;
 
                 case 0:

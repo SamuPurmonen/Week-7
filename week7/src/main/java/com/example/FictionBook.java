@@ -12,6 +12,9 @@ public class FictionBook extends Book implements Borrowable {
 
     }
 
+    public FictionBook(){
+
+    }
 
 
     @Override
@@ -20,18 +23,48 @@ public class FictionBook extends Book implements Borrowable {
 
     }
 
-    public void borrow(){
-        //tarkastaa kopioden määrän ja tulostaa
-        System.out.println("Kirja X on nyt lainattu.");
-        //tai
-        System.out.println("Kirjaa X ei enään ole lainattavissa!");
+    
+    public void borrow(String bookName, Library library){
+        boolean foundBook = false;
+        
+        for (Book book : library.getBooks()){
+            if (book instanceof  FictionBook && book.title.equalsIgnoreCase(bookName)){
+                if (book.copies >= 1){
+                    book.copies -= 1;
+                    System.out.println("Kirja " +book.title+ " on nyt lainattu.");
+                    
+                }
+                else{
+                    System.out.println("Kirjaa " + book.title +" ei enään ole lainattavissa!");
+                }
+                foundBook = true;
+            }
+                
 
+        }
+        if (foundBook == false){
+            System.out.println("Kirjaa ei löytynyt tai sitä ei voi lainata.");
+        }//tosi epätehokas mutta ainut mitä keksin
+        
     }
 
-    public void returnBook(){
-        //kirjaa palauttausessa tulostaa
-        System.out.println("Kirja X on palautettu.");
-        //tai
-        System.out.println("Kirja X ei ole lainassa.");
-    }
+    public void returnBook(String bookName, Library library){
+        
+        
+        boolean foundBook = false;
+        
+        for (Book book : library.getBooks()){
+            if (book instanceof  FictionBook && book.title.equalsIgnoreCase(bookName)){
+                System.out.println("Kirja "+ book.title +" on palautettu.");
+                book.copies +=1;
+                foundBook = true;
+            }
+        }
+        if (foundBook == false){
+            System.out.println("Kirja "+ bookName +" ei ole lainassa.");
+        
+        }
+
+    
+}
 }
