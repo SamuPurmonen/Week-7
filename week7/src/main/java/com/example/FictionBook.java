@@ -23,14 +23,11 @@ public class FictionBook extends Book implements Borrowable {
         return "Fiktiokirja";
 
     }
-    @Override
-    public void borrow(){
 
-    }
-    @Override
-    public void returnBook(){
 
-    }
+   
+    
+    
     @Override
     public void borrow(String bookName, Library library){
         boolean foundBook = false;
@@ -55,6 +52,7 @@ public class FictionBook extends Book implements Borrowable {
         }//tosi epätehokas mutta ainut mitä keksin
         
     }
+    
     
     @Override
     public void returnBook(String bookName, Library library){
