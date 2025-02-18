@@ -5,6 +5,7 @@ public abstract class Book {
     String author;
     int pages;
     int copies;
+    int copiesMax;
 
 
 

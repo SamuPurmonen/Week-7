@@ -7,6 +7,7 @@ public class NonFictionBook extends Book{
         this.author = author;
         this.pages = pages;
         this.copies = copies;
+        this.copiesMax = copies;
     }
 
 

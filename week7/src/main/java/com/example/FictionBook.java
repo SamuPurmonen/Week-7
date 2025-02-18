@@ -9,6 +9,7 @@ public class FictionBook extends Book implements Borrowable {
         this.author = author;
         this.pages = pages;
         this.copies = copies;
+        this.copiesMax = copies;
 
     }
 
@@ -55,9 +56,16 @@ public class FictionBook extends Book implements Borrowable {
         
         for (Book book : library.getBooks()){
             if (book instanceof  FictionBook && book.title.equalsIgnoreCase(bookName)){
+                
+
+                if (book.copies == book.copiesMax){
+                    System.out.println("Kirja "+book.title +" ei ole lainassa");
+                    foundBook = true;
+                } else{
                 System.out.println("Kirja "+ book.title +" on palautettu.");
                 book.copies +=1;
                 foundBook = true;
+                }
             }
         }
         if (foundBook == false){
