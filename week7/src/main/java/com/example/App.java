@@ -42,11 +42,11 @@ public class App
                     
                     if (Input == 1){
                         FictionBook fbook = new FictionBook(title, author, pages, copies);
-                        library.addBooks(fbook);
+                        library.addBook(fbook);
 
                     }else if (Input == 2){
                         NonFictionBook nfbook = new NonFictionBook(title, author, pages, copies);
-                        library.addBooks(nfbook);
+                        library.addBook(nfbook);
 
                     }else System.out.println("Väärä syöte.");
                     break;

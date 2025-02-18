@@ -7,7 +7,7 @@ public class Library {
     
     ArrayList<Book> booklist = new ArrayList<>();
 
-    public void addBooks(Book book) {
+    public void addBook(Book book) {
         //lisää kirjan listaan
         booklist.add(book);
         System.out.println("Kirja lisätty kirjastoon!");
