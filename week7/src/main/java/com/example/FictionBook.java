@@ -59,7 +59,7 @@ public class FictionBook extends Book implements Borrowable {
                 
 
                 if (book.copies == book.copiesMax){
-                    System.out.println("Kirja "+book.title +" ei ole lainassa");
+                    System.out.println("Kirja "+book.title +" ei ole lainassa.");
                     foundBook = true;
                 } else{
                 System.out.println("Kirja "+ book.title +" on palautettu.");
