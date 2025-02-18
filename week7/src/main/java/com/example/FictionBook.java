@@ -81,4 +81,14 @@ public class FictionBook extends Book implements Borrowable {
 
     
 }
+
+    @Override
+    public void borrow() {
+        
+    }
+
+    @Override
+    public void returnBook() {
+        
+    }
 }
