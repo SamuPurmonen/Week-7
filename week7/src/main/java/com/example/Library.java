@@ -36,7 +36,7 @@ public class Library {
             System.out.println("Kirjan kategoria: "+ book.categorize());
             amount += book.copies;
         }
-        System.out.println("Kirjojen määrä kirjastossa " + amount);
+        System.out.println("Kirjojen määrä kirjastossa on: " + amount);
         // kutsuu jokaisen kirjan displayInfo.metodia
         //joku for loop jossa kutsutaan Book olion DipsplayInfo metodia
 
