@@ -56,9 +56,16 @@ public class App
                     break;
 
                 case 3:
+                    System.out.println("Anna lainattavan kirjan nimi:");
+                    String bookName = sc.nextLine();
+                    //joku borrow etsii bookName2 olion ja muokkaa sen copies määrää -1
+                    Library.loanBook(bookName);
+
                     break;
+                    
 
                 case 4:
+                    
                     break;
 
                 case 0:

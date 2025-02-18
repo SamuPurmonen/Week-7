@@ -10,8 +10,7 @@ public abstract class Book {
 
 
     public void displayInfo(){
-        //tähän tulee todennäköisesti joku arraylistia lukeva looppijolla käydään kirjojen tiedot läpi
-        //tai sille annetaan jo valittu Book olio
+
         System.out.println("Nimi: "+ this.title + ", Kirjailija "+ this.author + ", Sivut "+ this.pages + ", Määrä: " + this.copies);
     }
 
